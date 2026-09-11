@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Project — Liam Rowley</title>
+  <meta name="description" content="Work by Liam Rowley, Brooklyn-based Director / DP.">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Project — Liam Rowley">
+  <meta property="og:description" content="Work by Liam Rowley, Brooklyn-based Director / DP.">
+  <meta property="og:image" content="https://www.liamrowley.net/share.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&display=swap">
+  <link rel="stylesheet" href="site.css">
+  <style>
+    .stage { grid-auto-rows: auto; }
+    nav.top { height: var(--cell); grid-row: 1; margin-top: var(--cell); }
+    .film { grid-column: 2 / 40; height: calc(var(--cell) * 19); margin-top: var(--cell); cursor: pointer; }
+    .info { grid-column: 2 / 40; display: grid; grid-template-columns: calc(var(--cell) * 24) calc(var(--cell) * 13); gap: var(--cell); margin-top: var(--cell); min-height: calc(var(--cell) * 7); }
+    .info h1 { font-size: calc(var(--cell) * 2.6); }
+    .info .blurb { margin: calc(var(--cell) * .5) 0 0 0; max-width: calc(var(--cell) * 18); font-size: calc(var(--cell) * .5); font-weight: 500; line-height: 1.3; letter-spacing: -.01em; }
+    .credits { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: calc(var(--cell) * .6) var(--cell); align-content: start; padding-top: calc(var(--cell) * .3); }
+    .credits div { display: flex; flex-direction: column; gap: 4px; }
+    .stills { grid-column: 2 / 40; display: grid; grid-template-columns: repeat(3, calc(var(--cell) * 12)); gap: var(--cell); margin-top: calc(var(--cell) * 2); }
+    .still.wide { grid-column: span 2; height: calc(var(--cell) * 14); }
+    .still.tall { height: calc(var(--cell) * 14); }
+    .still.sq { aspect-ratio: 1 / 1; }
+    footer { grid-column: 2 / 40; margin-top: calc(var(--cell) * 3); padding: calc(var(--cell) * .6) 0; border-top: 2px solid var(--ink); display: flex; justify-content: space-between; align-items: center; }
+    footer .next { display: flex; flex-direction: column; gap: 6px; }
+    footer .next a { font-size: calc(var(--cell) * 1.3); font-weight: 800; letter-spacing: -.03em; text-transform: uppercase; line-height: 1; }
+    @media (max-width: 767px) {
+      .film { grid-column: 2 / 13; height: calc(var(--cell) * 6); }
+      .info { grid-column: 2 / 13; grid-template-columns: 1fr; min-height: 0; }
+      .info h1 { font-size: calc(var(--cell) * 1.6); }
+      .info .blurb { max-width: none; }
+      .stills { grid-column: 2 / 13; grid-template-columns: 1fr; }
+      .still.wide { grid-column: auto; height: auto; aspect-ratio: 16 / 9; }
+      .still.tall { height: auto; aspect-ratio: 4 / 5; }
+      footer { grid-column: 2 / 13; flex-direction: column; align-items: flex-start; gap: var(--cell); }
+      footer .next a { font-size: calc(var(--cell) * .95); }
+    }
+  </style>
+</head>
+<body>
+<div class="paper" aria-hidden="true"></div>
+<main>
+  <div class="stage" id="project">
+    <nav class="top" aria-label="Main">
+      <a class="brand" href="index.html">Liam Rowley <span>— Director / DP</span></a>
+      <div class="links">
+        <a href="director.html">Director/DP</a>
+        <a href="editor.html">Editor</a>
+        <a href="creative.html">Creative</a>
+        <a href="#" data-email="lyrowley@gmail.com">Contact</a>
+      </div>
+    </nav>
+    <a class="blk film in d1" href="#" id="pFilm" data-vimeo="" aria-label="Play the film">
+      <span class="play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 4v16l13-8z"/></svg>Play</span>
+    </a>
+    <div class="info">
+      <div>
+        <a class="k in d2" id="pBack" href="director.html">← Director/DP</a>
+        <h1 class="display in d2" id="pTitle" style="margin-top: calc(var(--cell) * .4)">Project</h1>
+        <p class="blurb in d3" id="pBlurb"></p>
+      </div>
+      <div class="credits in d3" id="pCredits"></div>
+    </div>
+    <div class="stills in d4" id="pStills"></div>
+    <footer>
+      <div class="next"><span class="k">Next</span><a id="pNext" href="#">→</a></div>
+      <a class="cap" href="#" data-email="lyrowley@gmail.com">lyrowley@gmail.com</a>
+    </footer>
+  </div>
+</main>
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Video">
+  <button class="close" id="lbClose" type="button">Close ✕</button>
+  <div class="frame" id="lbFrame"></div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="projects.js"></script>
+<script src="site.js"></script>
+</body>
+</html>

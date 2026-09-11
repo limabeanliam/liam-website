@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Director/DP — Liam Rowley</title>
+  <meta name="description" content="Director/DP work by Liam Rowley, Brooklyn-based Director / DP.">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Director/DP — Liam Rowley">
+  <meta property="og:description" content="Director/DP work by Liam Rowley, Brooklyn-based Director / DP.">
+  <meta property="og:image" content="https://www.liamrowley.net/share.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&display=swap">
+  <link rel="stylesheet" href="site.css">
+  <style>
+    .stage { grid-auto-rows: auto; }
+    nav.top { height: var(--cell); grid-row: 1; margin-top: var(--cell); }
+    .head { grid-column: 2 / 40; display: flex; justify-content: space-between; align-items: flex-end; height: calc(var(--cell) * 5); padding-top: var(--cell); }
+    .head h1 { font-size: calc(var(--cell) * 2.6); }
+    .grid { grid-column: 2 / 40; display: grid; grid-template-columns: repeat(3, calc(var(--cell) * 12)); gap: var(--cell); margin-top: var(--cell); }
+    .sq { aspect-ratio: 1 / 1; }
+    footer { grid-column: 2 / 40; margin-top: calc(var(--cell) * 3); height: calc(var(--cell) * 3); border-top: 2px solid var(--ink); display: flex; justify-content: space-between; align-items: center; }
+    @media (max-width: 767px) {
+      .head { grid-column: 2 / 13; height: auto; padding: var(--cell) 0 0 0; flex-direction: column; align-items: flex-start; gap: calc(var(--cell) * .4); }
+      .head h1 { font-size: calc(var(--cell) * 1.9); }
+      .grid { grid-column: 2 / 13; grid-template-columns: repeat(2, calc(var(--cell) * 5)); }
+      footer { grid-column: 2 / 13; }
+    }
+  </style>
+</head>
+<body>
+<div class="paper" aria-hidden="true"></div>
+<main>
+  <div class="stage">
+    <nav class="top" aria-label="Main">
+      <a class="brand" href="index.html">Liam Rowley <span>— Director / DP</span></a>
+      <div class="links">
+        <a href="director.html" class="here">Director/DP</a>
+        <a href="editor.html">Editor</a>
+        <a href="creative.html">Creative</a>
+        <a href="#" data-email="lyrowley@gmail.com">Contact</a>
+      </div>
+    </nav>
+    <div class="head">
+      <h1 class="display in d1">Director/DP</h1>
+      <span class="cap in d2" id="catCount"></span>
+    </div>
+    <div class="grid" id="catGrid" data-category="dp"></div>
+    <footer>
+      <a class="cap" href="#" data-email="lyrowley@gmail.com" style="font-weight:700">lyrowley@gmail.com</a>
+      <span class="cap">Brooklyn, NY</span>
+    </footer>
+  </div>
+</main>
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Video">
+  <button class="close" id="lbClose" type="button">Close ✕</button>
+  <div class="frame" id="lbFrame"></div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="projects.js"></script>
+<script src="site.js"></script>
+</body>
+</html>
