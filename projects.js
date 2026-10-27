@@ -25,9 +25,9 @@ window.PROJECTS = [
     vimeo: "1239906256", blurb: "", thumb: "img/shade-inc-waiting-room/thumb.jpg", poster: "img/shade-inc-waiting-room/poster.jpg", loop: "img/shade-inc-waiting-room/loop.mp4", stills: ["img/shade-inc-waiting-room/still-1.jpg", "img/shade-inc-waiting-room/still-2.jpg", "img/shade-inc-waiting-room/still-3.jpg", "img/shade-inc-waiting-room/still-4.jpg", "img/shade-inc-waiting-room/still-5.jpg", "img/shade-inc-waiting-room/still-6.jpg", "img/shade-inc-waiting-room/still-7.jpg", "img/shade-inc-waiting-room/still-8.jpg", "img/shade-inc-waiting-room/still-9.jpg", "img/shade-inc-waiting-room/still-10.jpg", "img/shade-inc-waiting-room/still-11.jpg", "img/shade-inc-waiting-room/still-12.jpg"]
   },
   {
-    slug: "nespresso-bean-breakdown", title: "Nespresso — Bean Breakdown", category: "dp", home: 3,
-    client: "Nespresso", agency: "", director: "", role: "Director of Photography", camera: "", year: "",
-    vimeo: "1239906256", blurb: "", thumb: "img/nespresso-bean-breakdown/thumb.jpg", poster: "img/nespresso-bean-breakdown/poster.jpg", loop: "img/nespresso-bean-breakdown/loop.mp4", stills: ["img/nespresso-bean-breakdown/still-1.jpg", "img/nespresso-bean-breakdown/still-2.jpg", "img/nespresso-bean-breakdown/still-3.jpg", "img/nespresso-bean-breakdown/still-4.jpg", "img/nespresso-bean-breakdown/still-5.jpg", "img/nespresso-bean-breakdown/still-6.jpg", "img/nespresso-bean-breakdown/still-7.jpg", "img/nespresso-bean-breakdown/still-8.jpg", "img/nespresso-bean-breakdown/still-9.jpg", "img/nespresso-bean-breakdown/still-10.jpg", "img/nespresso-bean-breakdown/still-11.jpg", "img/nespresso-bean-breakdown/still-12.jpg"]
+    slug: "ey-daikin", title: "EY — Daikin", category: "dp", home: 3,
+    client: "EY", agency: "", director: "", role: "Director of Photography", camera: "", year: "",
+    vimeo: "1239933501", blurb: "", thumb: "img/ey-daikin/thumb.jpg", poster: "img/ey-daikin/poster.jpg", loop: "img/ey-daikin/loop.mp4", stills: ["img/ey-daikin/still-1.jpg", "img/ey-daikin/still-2.jpg", "img/ey-daikin/still-3.jpg", "img/ey-daikin/still-4.jpg", "img/ey-daikin/still-5.jpg", "img/ey-daikin/still-6.jpg", "img/ey-daikin/still-7.jpg", "img/ey-daikin/still-8.jpg"]
   },
   {
     slug: "ey-family-dynasty", title: "EY — Family Dynasty", category: "dp", home: 4,
