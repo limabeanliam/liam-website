@@ -1,2 +1,3 @@
-Web files live here (reel-loop.mp4, reel.jpg, project thumbs/posters/stills).
-Keep full-size originals in img/source/ - that folder is ignored by git and never uploaded.
+One folder per project (named after its slug in projects.js) plus reel/ for the homepage.
+Each holds loop.mp4, thumb.jpg, poster.jpg, still-1.jpg, still-2.jpg, still-3.jpg.
+Full-size originals go in source/, which git ignores.

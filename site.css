@@ -48,7 +48,9 @@ main { position: relative; z-index: 1; }
 .blk .lbl { position: absolute; left: calc(var(--cell) * .33); bottom: calc(var(--cell) * .28); right: calc(var(--cell) * .33); font-size: calc(var(--cell) * .3); font-weight: 500; letter-spacing: .08em; text-transform: uppercase; line-height: 1.2; }
 .tile .lbl { opacity: 0; transform: translateY(6px); transition: opacity .25s ease, transform .25s ease; }
 .tile:hover .lbl, .tile:focus-visible .lbl { opacity: 1; transform: none; }
-.tile:hover img, .tile:hover video { transform: scale(1.03); }
+.tile:hover img { transform: scale(1.03); }
+.tile video.loop { opacity: 0; transition: opacity .35s ease; }
+.tile video.loop[autoplay], .tile:hover video.loop, .tile:focus-visible video.loop { opacity: 1; }
 .reel { cursor: pointer; }
 .reel video.loop { transition: none; }
 .reel::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: calc(var(--cell) * 2); background: linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,0)); pointer-events: none; }

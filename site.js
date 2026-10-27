@@ -4,6 +4,12 @@
   var byCat = function (c) { return P.filter(function (p) { return p.category === c; }); };
   var esc = function (s) { return String(s || '').replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
   var img = function (src, alt) { return src ? '<img src="' + esc(src) + '" alt="' + esc(alt || '') + '" loading="lazy">' : ''; };
+  var media = function (p) {
+    // thumb always; loop on top when there is one (plays on hover, or always when TILE_AUTOPLAY)
+    var h = img(p.thumb, p.title);
+    if (p.loop) h += '<video class="loop" muted loop playsinline preload="' + (window.TILE_AUTOPLAY ? 'metadata' : 'none') + '"' + (window.TILE_AUTOPLAY ? ' autoplay' : '') + ' aria-hidden="true"><source src="' + esc(p.loop) + '" type="video/mp4"></video>';
+    return h;
+  };
   var CAT = { dp: 'Director/DP', editor: 'Editor', creative: 'Creative' };
   var PAGE = { dp: 'director.html', editor: 'editor.html', creative: 'creative.html' };
 
@@ -12,7 +18,7 @@
   if (home) {
     var six = P.filter(function (p) { return p.home; }).sort(function (a, b) { return a.home - b.home; }).slice(0, 6);
     home.outerHTML = six.map(function (p, i) {
-      return '<a class="blk tile t' + (i + 1) + ' in d' + (i + 3) + '" href="project.html?p=' + esc(p.slug) + '">' + img(p.thumb, p.title) + '<span class="lbl">' + esc(p.title) + '</span></a>';
+      return '<a class="blk tile t' + (i + 1) + ' in d' + (i + 3) + '" href="project.html?p=' + esc(p.slug) + '">' + media(p) + '<span class="lbl">' + esc(p.title) + '</span></a>';
     }).join('');
     var reelPoster = document.getElementById('reelPoster'), R = window.REEL || {};
     if (reelPoster) {
@@ -32,7 +38,7 @@
     var cat = grid.getAttribute('data-category');
     var items = byCat(cat);
     grid.innerHTML = items.map(function (p, i) {
-      return '<a class="blk tile sq in d' + Math.min(i + 2, 8) + '" href="project.html?p=' + esc(p.slug) + '">' + img(p.thumb, p.title) + '<span class="lbl">' + esc(p.title) + (p.year ? ' · ' + esc(p.year) : '') + '</span></a>';
+      return '<a class="blk tile sq in d' + Math.min(i + 2, 8) + '" href="project.html?p=' + esc(p.slug) + '">' + media(p) + '<span class="lbl">' + esc(p.title) + (p.year ? ' · ' + esc(p.year) : '') + '</span></a>';
     }).join('') || '<p class="cap" style="grid-column: 1 / -1;">Work coming soon.</p>';
     var count = document.getElementById('catCount');
     if (count) count.textContent = (items.length < 10 ? '0' : '') + items.length + (items.length === 1 ? ' project' : ' projects');
@@ -56,11 +62,14 @@
       var back = document.getElementById('pBack');
       if (back) { back.textContent = '← ' + (CAT[p.category] || 'Work'); back.href = PAGE[p.category] || 'director.html'; }
       var film = document.getElementById('pFilm');
-      if (p.poster) film.insertAdjacentHTML('afterbegin', img(p.poster, ''));
+      if (p.loop) {
+        film.insertAdjacentHTML('afterbegin', '<video class="loop" autoplay muted loop playsinline preload="metadata"' + (p.poster ? ' poster="' + esc(p.poster) + '"' : '') + ' aria-hidden="true"><source src="' + esc(p.loop) + '" type="video/mp4"></video>');
+        var fv = film.querySelector('video'); if (fv) { fv.muted = true; var fp = fv.play(); if (fp && fp.catch) fp.catch(function () {}); }
+      } else if (p.poster) film.insertAdjacentHTML('afterbegin', img(p.poster, ''));
       film.setAttribute('data-vimeo', p.vimeo || '');
       var st = p.stills || [];
       var stillsEl = document.getElementById('pStills');
-      stillsEl.innerHTML = ['wide', 'tall', 'sq', 'sq', 'sq'].map(function (shape, i) {
+      stillsEl.innerHTML = ['wide', 'half', 'half'].map(function (shape, i) {
         return '<div class="blk still ' + shape + '">' + img(st[i], '') + (st[i] ? '' : '<span class="lbl">[still ' + (i + 1) + ']</span>') + '</div>';
       }).join('');
       var same = byCat(p.category);
@@ -69,6 +78,17 @@
       if (next && n && n !== p) { next.textContent = n.title + ' →'; next.href = 'project.html?p=' + n.slug; }
       else if (next) { next.parentElement.style.visibility = 'hidden'; }
     }
+  }
+
+  /* ---------- tiles: play the loop on hover / focus, rewind on leave ---------- */
+  if (!window.TILE_AUTOPLAY) {
+    document.querySelectorAll('.tile').forEach(function (t) {
+      var v = t.querySelector('video.loop'); if (!v) return;
+      var on = function () { v.muted = true; var pr = v.play(); if (pr && pr.catch) pr.catch(function () {}); };
+      var off = function () { v.pause(); v.currentTime = 0; };
+      t.addEventListener('mouseenter', on); t.addEventListener('focus', on);
+      t.addEventListener('mouseleave', off); t.addEventListener('blur', off);
+    });
   }
 
   /* ---------- reel / film lightbox ---------- */
