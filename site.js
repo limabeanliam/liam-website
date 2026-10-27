@@ -14,8 +14,16 @@
     home.outerHTML = six.map(function (p, i) {
       return '<a class="blk tile t' + (i + 1) + ' in d' + (i + 3) + '" href="project.html?p=' + esc(p.slug) + '">' + img(p.thumb, p.title) + '<span class="lbl">' + esc(p.title) + '</span></a>';
     }).join('');
-    var reelPoster = document.getElementById('reelPoster');
-    if (reelPoster && window.REEL && window.REEL.poster) reelPoster.outerHTML = img(window.REEL.poster, '');
+    var reelPoster = document.getElementById('reelPoster'), R = window.REEL || {};
+    if (reelPoster) {
+      if (R.loop) {
+        reelPoster.outerHTML = '<video class="loop" autoplay muted loop playsinline preload="metadata"' + (R.poster ? ' poster="' + esc(R.poster) + '"' : '') + ' aria-hidden="true"><source src="' + esc(R.loop) + '" type="video/mp4"></video>';
+        var v = document.querySelector('#reel video.loop');
+        if (v) { v.muted = true; var pl = v.play(); if (pl && pl.catch) pl.catch(function () {}); }
+      } else if (R.poster) {
+        reelPoster.outerHTML = img(R.poster, '');
+      }
+    }
   }
 
   /* ---------- category page: square grid ---------- */

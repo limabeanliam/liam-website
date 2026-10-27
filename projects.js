@@ -6,7 +6,8 @@
    thumb: square image (500x500+). poster: 16:9 frame for the top of the project page.
    stills: up to three — the first is shown wide (16:9), the second tall (4:5), the rest square. */
 
-window.REEL = { vimeo: "", poster: "" };   // homepage reel
+window.REEL = { vimeo: "", loop: "img/reel-loop.mp4", poster: "img/reel.jpg" };
+// homepage reel: loop = short muted MP4 that autoplays in the block; poster = frame shown until it loads (and on Low Power Mode); vimeo = the full reel, opens on click
 
 window.PROJECTS = [
   {

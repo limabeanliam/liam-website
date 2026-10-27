@@ -7,7 +7,8 @@ Everything about the work is in `projects.js` — one block per project. Edit th
 
 - `home: 1` … `home: 6` picks the six homepage tiles and their order.
 - `category` decides which page a project sits on: `"dp"`, `"editor"` or `"creative"`.
-- `vimeo` is the number from the Vimeo URL. The homepage reel's number goes in `window.REEL` at the top.
+- `vimeo` is the number from the Vimeo URL.
+- The homepage reel is `window.REEL` at the top: `loop` is a short muted MP4 (20–30 s of your best cuts, 1280x720, H.264, no audio track, under ~8 MB) that autoplays in the block; `poster` is a frame grab shown until it loads; `vimeo` is the full reel, which opens full-screen on click.
 - Images go in an `img/` folder: `thumb` (square, 500px+), `poster` (16:9), and up to three `stills` (first is wide, second is tall, the rest square).
 
 ## Share image
