@@ -15,12 +15,12 @@ window.TILE_AUTOPLAY = false;   // false: tiles show the thumb and play their lo
 
 window.PROJECTS = [
   {
-    slug: "wnba-all-star-2026", title: "WNBA All-Star 2026", category: "dp", home: 1,
+    slug: "wnba-all-star-2026", title: "WNBA All-Star 2026", category: "dp", home: 2,
     client: "WNBA", agency: "", director: "", role: "Director of Photography", camera: "", year: "2026",
     vimeo: "1239906256", blurb: "", thumb: "img/wnba-all-star-2026/thumb.jpg", poster: "img/wnba-all-star-2026/poster.jpg", loop: "img/wnba-all-star-2026/loop.mp4", stills: ["img/wnba-all-star-2026/still-1.jpg", "img/wnba-all-star-2026/still-2.jpg", "img/wnba-all-star-2026/still-3.jpg", "img/wnba-all-star-2026/still-4.jpg", "img/wnba-all-star-2026/still-5.jpg", "img/wnba-all-star-2026/still-6.jpg", "img/wnba-all-star-2026/still-7.jpg", "img/wnba-all-star-2026/still-8.jpg", "img/wnba-all-star-2026/still-9.jpg", "img/wnba-all-star-2026/still-10.jpg", "img/wnba-all-star-2026/still-11.jpg", "img/wnba-all-star-2026/still-12.jpg"]
   },
   {
-    slug: "shade-inc-waiting-room", title: "Shade Inc — Waiting Room", category: "dp", home: 2,
+    slug: "shade-inc-waiting-room", title: "Shade Inc — Waiting Room", category: "dp", home: 1,
     client: "Shade Inc", agency: "", director: "", role: "Director of Photography", camera: "", year: "",
     vimeo: "1239906256", blurb: "", thumb: "img/shade-inc-waiting-room/thumb.jpg", poster: "img/shade-inc-waiting-room/poster.jpg", loop: "img/shade-inc-waiting-room/loop.mp4", stills: ["img/shade-inc-waiting-room/still-1.jpg", "img/shade-inc-waiting-room/still-2.jpg", "img/shade-inc-waiting-room/still-3.jpg", "img/shade-inc-waiting-room/still-4.jpg", "img/shade-inc-waiting-room/still-5.jpg", "img/shade-inc-waiting-room/still-6.jpg", "img/shade-inc-waiting-room/still-7.jpg", "img/shade-inc-waiting-room/still-8.jpg", "img/shade-inc-waiting-room/still-9.jpg", "img/shade-inc-waiting-room/still-10.jpg", "img/shade-inc-waiting-room/still-11.jpg", "img/shade-inc-waiting-room/still-12.jpg"]
   },
