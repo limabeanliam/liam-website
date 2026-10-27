@@ -20,3 +20,11 @@ Grid colour, shadow strength and offset are the first lines of `site.css` (`--gr
 
 ## After editing site.css, site.js or projects.js
 Run `sh bump.sh` (in Terminal, inside this folder) before committing. It stamps the pages so browsers stop using a cached copy.
+
+## Adding real media to a project (the pipeline)
+1. Make a folder `img/source/<slug>/` (the slug is the project's `slug` in `projects.js`, e.g. `ey-family-dynasty`).
+2. Drop in the stills as PNG/JPG/TIFF at any size — they are used in name order, so number them — and, if you have one, the loop clip as a `.mov` or `.mp4`.
+3. Tell Claude "prep <slug>", or run `sh prep.sh <slug>` yourself (needs ffmpeg: `brew install ffmpeg`).
+   It writes web-sized files into `img/<slug>/`: `still-1.jpg`… (1600 wide, 16:9), `poster.jpg` and `thumb.jpg` (from the first still), and `loop.mp4` (720p, silent).
+4. Check `projects.js` lists the stills you want (it lists 12 by default). Commit and push.
+The originals stay in `img/source/`, which git never uploads.

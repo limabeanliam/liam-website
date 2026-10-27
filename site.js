@@ -69,7 +69,7 @@
       film.setAttribute('data-vimeo', p.vimeo || '');
       var st = p.stills || [];
       var stillsEl = document.getElementById('pStills');
-      stillsEl.innerHTML = (st.length ? st : [null, null, null, null, null, null, null, null]).map(function (s, i) {
+      stillsEl.innerHTML = (st.length ? st : [null, null, null, null, null, null, null, null, null, null, null, null]).map(function (s, i) {
         return '<div class="blk still">' + img(s, '') + (s ? '' : '<span class="lbl">[still ' + (i + 1) + ']</span>') + '</div>';
       }).join('');
       var same = byCat(p.category);
