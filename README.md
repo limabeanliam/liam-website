@@ -9,7 +9,7 @@ Everything about the work is in `projects.js` — one block per project. Edit th
 - `category` decides which page a project sits on: `"dp"`, `"editor"` or `"creative"`.
 - `vimeo` is the number from the Vimeo URL.
 - The homepage reel is `window.REEL` at the top: `loop` is a short muted MP4 (20–30 s of your best cuts, 1280x720, H.264, no audio track, under ~8 MB) that autoplays in the block; `poster` is a frame grab shown until it loads; `vimeo` is the full reel, which opens full-screen on click.
-- Each project has its own folder, `img/<slug>/`, holding `thumb.jpg` (square, 500px+), `poster.jpg` (16:9 frame), `loop.mp4` (short muted clip: plays in the tile on hover and at the top of the project page), and `still-1.jpg` … `still-4.jpg` (16:9, shown four across). The homepage reel lives in `img/reel/`. To swap media, replace the file under the same name. Full-size originals go in `img/source/`, which git ignores.
+- Each project has its own folder, `img/<slug>/`, holding `thumb.jpg` (square, 500px+), `poster.jpg` (16:9 frame), `loop.mp4` (short muted clip: plays in the tile on hover and at the top of the project page), and `still-1.jpg` … `still-8.jpg` (16:9, four per row). The homepage reel lives in `img/reel/`. To swap media, replace the file under the same name. Full-size originals go in `img/source/`, which git ignores.
 - `window.TILE_AUTOPLAY` (top of `projects.js`) switches the tiles from hover-to-play to always-looping.
 
 ## Share image

@@ -69,8 +69,8 @@
       film.setAttribute('data-vimeo', p.vimeo || '');
       var st = p.stills || [];
       var stillsEl = document.getElementById('pStills');
-      stillsEl.innerHTML = ['a', 'b', 'c', 'd'].map(function (shape, i) {
-        return '<div class="blk still">' + img(st[i], '') + (st[i] ? '' : '<span class="lbl">[still ' + (i + 1) + ']</span>') + '</div>';
+      stillsEl.innerHTML = (st.length ? st : [null, null, null, null, null, null, null, null]).map(function (s, i) {
+        return '<div class="blk still">' + img(s, '') + (s ? '' : '<span class="lbl">[still ' + (i + 1) + ']</span>') + '</div>';
       }).join('');
       var same = byCat(p.category);
       var n = same[(same.indexOf(p) + 1) % same.length];
